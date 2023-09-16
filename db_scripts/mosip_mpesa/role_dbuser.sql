@@ -1,0 +1,4 @@
+CREATE ROLE mpesauser WITH
+	INHERIT
+	LOGIN
+	PASSWORD :dbuserpwd;
