@@ -15,6 +15,8 @@ ADD install.sh install.sh
 
 RUN chmod +x install.sh
 
+ENTRYPOINT [ "/install.sh" ]
+
 # Using multi-stage builds
 FROM golang:1.14-alpine AS go-builder
 
