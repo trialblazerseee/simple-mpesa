@@ -3,6 +3,6 @@ database:
   port: "5432"
   user: "mpesa"
   password: "mpesa"
-  dbname: "mpesa"
+  dbname: "mosip_mpesa"
 
 app_secret_key: "eQig7GS4cHO2su"

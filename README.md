@@ -187,7 +187,7 @@ $ git clone https://github.com/SirWaithaka/simple-mpesa.git
 #### Configuring
 ```bash
 $ cd simple-mpesa
-$ cp config.yml.example config.yml
+$ cp config.yml config.yml
 ```
 
 This configuration file looks something like this

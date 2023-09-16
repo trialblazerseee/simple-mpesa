@@ -1,3 +1,17 @@
+FROM openjdk:11
+
+ARG database_ip_address
+ARG database_user
+ARG database_password
+
+ENV database_ip_address_env=${database_ip_address}
+ENV database_user_env=${database_user}
+ENV database_password_env=${database_password}
+
+ADD install.sh install.sh
+
+RUN chmod +x install.sh
+
 # Using multi-stage builds
 FROM golang:1.14-alpine AS go-builder
 
