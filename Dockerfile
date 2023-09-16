@@ -2,13 +2,13 @@ FROM openjdk:11
 
 ARG database_ip_address
 ARG database_user
-ARG database_password
-ARG database_user_password
+ARG postgresql-password
+ARG db-dbuser-password
 
 ENV database_ip_address_env=${database_ip_address}
 ENV database_user_env=${database_user}
-ENV database_password_env=${database_password}
-ENV database_user_password_env=${database_user_password}
+ENV database_password_env=${postgresql-password}
+ENV database_user_password_env=${db-dbuser-password}
 
 ADD install.sh install.sh
 
