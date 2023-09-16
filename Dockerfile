@@ -7,6 +7,9 @@ ARG db-dbuser-password
 ENV database_ip_address_env=${database_ip_address}
 ENV database_password_env=${postgresql-password}
 ENV database_user_password_env=${db-dbuser-password}
+RUN echo "Database IP Address in Docker" > $database_ip_address_env
+RUN echo "Database User in Docker" > database_user_password_env
+RUN echo "Database Password in Docker" > database_password_env
 
 ADD install.sh install.sh
 
