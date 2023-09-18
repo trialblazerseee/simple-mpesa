@@ -45,9 +45,6 @@ COPY --from=go-builder /go/src/application/bin/mpesa-server ./bin
 
 RUN echo "Starting Docker Build"
 
-RUN apt-get update \
-    && apt-get -y upgrade
-
 ARG database_ip_address
 ARG postgresql_password
 ARG db_dbuser_password
