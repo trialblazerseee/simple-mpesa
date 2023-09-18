@@ -38,7 +38,7 @@ WORKDIR /go/app/
 # copy extra files that can be useful to someone reading the application image
 COPY Dockerfile .
 COPY ReadMe.md .
-COPY config.yml .
+COPY config-example.yml .
 
 RUN mkdir bin/
 COPY --from=go-builder /go/src/application/bin/mpesa-server ./bin
