@@ -1,29 +1,49 @@
-FROM openjdk:11
-ARG SOURCE
-ARG COMMIT_HASH
-ARG COMMIT_ID
-ARG BUILD_TIME
-LABEL source=${SOURCE}
-LABEL commit_hash=${COMMIT_HASH}
-LABEL commit_id=${COMMIT_ID}
-LABEL build_time=${BUILD_TIME}
+# Using multi-stage builds
+FROM golang:1.14-alpine AS go-builder
 
-RUN apt-get update \
-    && apt-get -y upgrade
+LABEL maintainer="Sir Waithaka"
 
-ARG database_ip_address
-ARG postgresql_password
-ARG db-dbuser_password
+# Set the current working directory inside the container
+WORKDIR /go/src/application
 
-ENV database_ip_address_env=${database_ip_address}
-ENV database_password_env=${postgresql_password}
-ENV database_user_password_env=${db_dbuser_password}
-RUN echo "Database IP Address in Docker" > $database_ip_address_env
-RUN echo "Database User in Docker" > database_user_password_env
-RUN echo "Database Password in Docker" > database_password_env
+# copy go.{mod,sum} files for use to fetch dependencies
+# fetching go dependencies first allows the build tool to cache this part of the image
+COPY go.mod .
+COPY go.sum .
+RUN go mod download
 
-ADD install.sh install.sh
+# Copy project source files
+COPY app/ ./app
+COPY cmd/ ./cmd
+COPY configs/ ./configs
 
-RUN chmod +x install.sh
+# Build the application
+RUN mkdir bin/
+RUN go build -o bin/mpesa-server cmd/mpesa-server.go
 
-ENTRYPOINT [ "/install.sh" ]
+
+# Start the second image
+FROM alpine:3
+
+# install some linux packages
+RUN apk --no-cache add ca-certificates tzdata
+
+# configure correct timezone for image
+RUN cp /usr/share/zoneinfo/Africa/Nairobi /etc/localtime
+RUN echo "Africa/Nairobi" > /etc/timezone
+
+# set the working director in the container
+WORKDIR /go/app/
+
+# copy extra files that can be useful to someone reading the application image
+COPY Dockerfile .
+COPY ReadMe.md .
+COPY config.yml .
+
+RUN mkdir bin/
+COPY --from=go-builder /go/src/application/bin/mpesa-server ./bin
+
+# expose the port that the server starts on
+EXPOSE 6700
+
+CMD ["./bin/mpesa-server"]
