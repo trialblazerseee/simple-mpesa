@@ -1,0 +1,5 @@
+id,email,first_name,last_name,phone_number,passport_no,password,super_agent,created_at,updated_at,deleted_at
+2f8cbaab-f661-4679-96a3-8199006b3feb,openg2p_agent2@mosip.bank,OpenG2P,Agent2,1234567891,"",$2a$10$51az5ZelwTgkdSNN0Zm1k.JOh9Oe5grPUYfkxLo06a1CCDrJdAx6e,0,2023-09-21 14:03:04.843072+00,2023-09-21 14:03:04.843072+00,
+077b672a-cfd3-4fef-aa4e-c1ae666d7477,openg2p_agent3@mosip.bank,OpenG2P,Agent3,1234567892,"",$2a$10$TRgiyva5rJ0E22vGLoMQO.iJpo4WAbfpiBj4Y4rVOt0w2TXUpHYxy,0,2023-09-21 14:03:22.044247+00,2023-09-21 14:03:22.044247+00,
+43b57995-9fd4-4715-b882-a2e96854943c,openg2p_agent4@mosip.bank,OpenG2P,Agent4,1234567893,"",$2a$10$x7QGBTk10vD2K5GrQAlfYeZZ5NJU0WmJKXE6lGD6qHzjKi0Gr5CFa,0,2023-09-21 14:03:39.739798+00,2023-09-21 14:03:39.739798+00,
+48db6c72-b8a1-432e-b384-c28298f367a0,openg2p_agent1@mosip.bank,OpenG2P,Agent1,1234567890,"",$2a$10$ksEOkmZJXtfsN1r45Hz.OOLoomJzmjiHolzESR.4vgG/9n.gUdOoi,1,2023-09-21 13:58:58.242472+00,2023-09-21 16:24:19.713225+00,

@@ -1,0 +1,4 @@
+id,email,first_name,last_name,phone_number,passport_no,password,till_number,created_at,updated_at,deleted_at
+d18293bf-b96b-46ae-a515-2f40b08ef8dd,shoppercity@mosip.bank,Shoppers,City,1234567894,"",$2a$10$I1jcuayM27Xjzaorw2rixeOdKz9Thh1cnoVX5VGwzlBnuHRTaRNR2,1234567,2023-09-21 14:06:19.246048+00,2023-09-21 14:06:19.246048+00,
+703970e1-4b98-4265-8514-a2cd087169f4,airtel@mosip.bank,airtel,mobile,1234567897,"",$2a$10$/tnoLdHPwVxIxVkeSRpHMu4Qna64/h6DgZIDldtFKnltrJBcDMCCm,123456789,2023-09-21 14:12:45.45675+00,2023-09-21 14:12:45.45675+00,
+3234e856-06e3-48b4-9120-c5c19bb95a01,croma@mosip.bank,croma,india,1234567898,"",$2a$10$yejUtJ7egU/djXhCZUlAaei7OQpeUXG2orRggMRVCZaOkX/hU3pU.,"",2023-09-21 14:13:28.846798+00,2023-09-21 14:13:28.846798+00,

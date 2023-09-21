@@ -1,0 +1,2 @@
+id,operation,debit_amount,credit_amount,user_id,account_id,created_at
+c7d5f0c3-e273-4b0a-a42a-74767acf0538,FLOAT_ASSIGNMENT,0,10000000,48db6c72-b8a1-432e-b384-c28298f367a0,9e31ead0-d770-41b4-9a2d-3e629cd2cc34,2023-09-21 16:30:15.795021+00
