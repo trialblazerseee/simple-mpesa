@@ -28,7 +28,6 @@ PGPASSWORD=$SU_USER_PWD psql --username=$SU_USER --host=$DB_SERVERIP --port=$DB_
 
 ## Create users
 echo `date "+%m/%d/%Y %H:%M:%S"` ": Creating database users" 
-echo "User Password : $DBUSER_PWD"
 PGPASSWORD=$SU_USER_PWD psql --username=$SU_USER --host=$DB_SERVERIP --port=$DB_PORT --dbname=$DEFAULT_DB_NAME -f role_dbuser.sql -v dbuserpwd=\'$DBUSER_PWD\'
 
 ## Create DB
